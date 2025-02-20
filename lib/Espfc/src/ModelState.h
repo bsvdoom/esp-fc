@@ -321,6 +321,13 @@ struct ModeState
   bool airmodeAllowed;
 };
 
+struct AltitudeState
+{
+  float height;
+  float heightPrev;
+  float rate;
+};
+
 struct VtxState
 {
   uint8_t active = false;
@@ -460,6 +467,8 @@ struct ModelState
 
   AttitudeState attitude;
   RotationMatrixFloat boardAlignment;
+
+  AltitudeState altitude;
 
   SetpointState setpoint;
   Control::Pid innerPid[AXIS_COUNT_RPYT];
